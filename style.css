@@ -6,7 +6,7 @@ creamy cream:   #FFF1BE
 
 /* FONT REFERENCE:
 'Spectral', serif;
-400;500;600
+300;400;500;600
 
 'Work Sans', sans-serif;
 400;500;600
@@ -18,16 +18,16 @@ creamy cream:   #FFF1BE
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
+  
 }
 
 body {
   margin: 0;
 
-  line-height: 1.5;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ body {
   border: 1px dashed cyan;
   height: 48px;
   width: 100%;
-  padding: 0 0 0 24px;
+  padding: 0 0 0 8px;
   display: flex;
   align-items: center;
 }
@@ -86,6 +86,7 @@ body {
   border: 1px dashed khaki;
   padding-left: 24px; 
   padding-right: 24px;
+  padding-bottom: 64px;
 }
 
 .section-projects p {
@@ -103,63 +104,138 @@ body {
 
 .project-card {
   border: 1px dashed rgba(255,255,255,0.2);
-  height: 400px;
+  height: 200px;
 }
 
-.section-fullwidth-tech {
+.section-skill {
   width: 100%;
-  height: 400px;
   display: flex;
-
+  color: #00372A;
 }
 
-.fullwidth-tech-left {
+.skill-left {
   background-color: #FFF1BE;
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 40px 16px 40px 16px;
+  padding: 40px 24px 40px 24px;
 }
 
-.fullwidth-tech-left-content {
-  max-width: 590px;
-  height: 100px;
-  border: 1px dashed darkviolet;
-  align-self: flex-end;
-}
-
-.fullwidth-tech-right {
+.skill-right {
   background-color: #F78154;
   display: flex;
   justify-content: start;
   width: 100%;
-  padding: 40px 16px 40px 16px;
+  padding: 40px 24px 40px 24px;
 }
 
-.fullwidth-tech-right-content {
-  max-width: 590px;
-  height: 100px;
-  border: 1px dashed green;
+.skill-left-content {
+  border: 1px dashed darkviolet;
+  align-self: flex-end;
 }
+
+.skill-right-content  {
+  display: flex;
+  border: 1px dashed green;
+  flex-direction: column;
+}
+
+.skill-left-content, .skill-right-content {
+  width: 100%;
+  max-width: 415px;
+}
+
+.skill-columns {
+  border: 1px dashed royalblue;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.skill-column {
+  border: 1px dashed blueviolet;
+  max-width: 200px;
+  font-family: 'Work Sans', sans-serif;
+  flex: 1 0;
+}
+
+.skill-column + .skill-column {
+  margin-left: 16px;
+}
+
+.p-skill-header {
+  font-weight: 600;
+}
+
+.p-skill {
+  font-size: 16px;
+}
+
+.p-skill-asterisk {
+  border: 1px dashed darkturquoise;
+}
+
+.squiggle-background-orange {
+  height: 5px;
+  background-image: url(./assets/divider-squiggle-bg-orange.svg);
+  background-position: center;
+  margin-bottom: 8px;
+}
+
+.squiggle-background-cream {
+  height: 5px;
+  background-image: url(./assets/divider-squiggle-bg-cream.svg);
+  background-position: center;
+  margin-bottom: 8px;
+}
+
+/* .h1-skill {
+  width: auto;
+} */
 
 .section-contact {
   border: 1px dashed #F78154;
-  height: 280px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 24px; 
-  padding-right: 24px;
+  padding: 80px 24px 208px 24px;
 }
 
 .section-contact-content {
   border: 1px dashed darkcyan;
   max-width: 680px;
-  padding-left: 24px; 
-  padding-right: 24px;
 }
 
+.links-container {
+  margin: 16px 0 16px 16px;
+}
+
+.link-box {
+  display: flex;
+}
+
+.link-box + .link-box {
+  margin-top: 8px;
+}
+
+
+.a-contact {
+  font-family: 'Work Sans', sans-serif;
+  color: #F78154;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.a-contact:hover {
+  color: #F78154;
+  text-decoration: underline;
+}
+
+.icon-inline {
+  margin-right: 8px;
+}
 
 /* ----- COLOURS ----- */
 
@@ -178,20 +254,40 @@ body {
 
 /* ----- TYPO FOUNDATION ----- */
 p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h1, h2, h3, h4, p {
   margin: 0;
   letter-spacing: -0.05em;
+  font-weight: 400;
 }
+
+h1 {font-size: 48px;}
+h2 {}
+h3 {font-size: 24px;}
+h4 {}
 
 
 @media (max-width: 800px) {
-  .section-projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .section-projects-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .section-skill { 
+    flex-direction: column; 
+  }
+  .skill-left-content {
+    align-self: flex-start;
+  }
+  .section-contact-content {
+    border: 1px dashed white;
+    /* width: auto; */
+  }
 }
 
 @media (max-width: 420px) {
-  .section-projects-grid { grid-template-columns: repeat(1, 1fr); }
+  .section-projects-grid { 
+    grid-template-columns: repeat(1, 1fr); 
+  }
 }
 
