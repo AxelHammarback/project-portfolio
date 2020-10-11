@@ -132,7 +132,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 40px 24px 40px 24px;
+  padding: 100px 24px 120px 24px;
 }
 
 .skill-right {
@@ -140,7 +140,7 @@ body {
   display: flex;
   justify-content: start;
   width: 100%;
-  padding: 40px 24px 40px 24px;
+  padding: 100px 24px 120px 24px;
 }
 
 .skill-left-content {
