@@ -48,6 +48,19 @@ body {
   display: flex;
   align-items: center;
   position: fixed;
+  justify-content: space-between;
+}
+
+.top-nav-leftcontent {
+  display: flex;
+}
+
+.top-nav-links {
+  display: flex;
+}
+
+.top-nav-links a:hover {
+  opacity: 0.9;
 }
 
 .section-intro {
@@ -270,8 +283,8 @@ h1, h2, h3, h4, p {
   font-weight: 400;
 }
 
-h1 {font-size: 48px;}
-h2 {}
+h1 {font-size: 80px;}
+h2 {font-size: 48px;}
 h3 {
   font-size: 32px;
 }
